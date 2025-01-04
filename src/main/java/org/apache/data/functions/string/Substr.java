@@ -1,5 +1,7 @@
 package org.apache.data.functions.string;
 
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.data.constants.FunctionType;
 import org.apache.data.functions.AbstractString2String;
 
@@ -25,13 +27,23 @@ public final class Substr extends AbstractString2String {
      */
     @Override
     public String call(String... args) {
-        if (args == null || args.length == 0 || args.length < 3) {
+        if (args == null || args.length < 2 || args.length > 3) {
+            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'SUBSTR'");
+        }
+        if (args[0] == null || args[1] == null || (args.length > 2 && args[2] == null)) {
             return null;
         }
-        String str = args[0];
-        int startIndex = Integer.parseInt(args[1]);
-        int substringLength = Integer.parseInt(args[2]);
-        return substr(str, startIndex, substringLength);
+        if (args[0].isEmpty() || args[1].isEmpty() || (args.length > 2 && args[2].isEmpty())) {
+            return StringUtils.EMPTY;
+        }
+        try {
+            String str = args[0];
+            int startIndex = Integer.parseInt(args[1]);
+            int substringLength = Integer.parseInt(args[2]);
+            return substr(str, startIndex, substringLength);
+        } catch (Exception ex) {
+            return StringUtils.EMPTY;
+        }
     }
 
     /**

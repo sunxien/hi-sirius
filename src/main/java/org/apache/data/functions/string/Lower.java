@@ -1,7 +1,6 @@
 package org.apache.data.functions.string;
 
 import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.data.constants.FunctionType;
 import org.apache.data.functions.AbstractString2String;
 
@@ -23,12 +22,16 @@ public final class Lower extends AbstractString2String {
         return INSTANCE;
     }
 
+    /**
+     * @param args
+     * @return String
+     */
     @Override
     public String call(String... args) {
-        if (ArrayUtils.isEmpty(args) || StringUtils.isBlank(args[0])) {
-            return null;
+        if (ArrayUtils.isEmpty(args)) {
+            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'LOWER'");
         }
-        return args[0].toLowerCase(Locale.getDefault());
+        return args[0] == null ? null : args[0].toLowerCase(Locale.getDefault());
     }
 
     /**

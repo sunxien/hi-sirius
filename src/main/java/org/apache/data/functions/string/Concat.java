@@ -1,5 +1,6 @@
 package org.apache.data.functions.string;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.data.constants.FunctionType;
 import org.apache.data.functions.AbstractString2String;
 
@@ -34,13 +35,18 @@ public final class Concat extends AbstractString2String {
      */
     @Override
     public String call(String... args) {
-        if (args == null || args.length < 2) {
-            return null;
+        if (ArrayUtils.isEmpty(args)) {
+            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'CONCAT'");
         }
-        if (args[0] == null && args[1] == null) {
-            return null;
+        StringBuilder sb = new StringBuilder();
+        for (String arg : args) {
+            if (arg == null) {
+                sb.setLength(0); // gc
+                return null;
+            }
+            sb.append(arg);
         }
-        return ((args[0] == null) ? "" : args[0]) + ((args[1] == null) ? "" : args[1]);
+        return sb.toString();
     }
 
     /**

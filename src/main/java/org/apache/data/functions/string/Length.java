@@ -1,7 +1,5 @@
 package org.apache.data.functions.string;
 
-import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.data.constants.FunctionType;
 import org.apache.data.functions.AbstractString2Integer;
 
@@ -27,10 +25,15 @@ public final class Length extends AbstractString2Integer {
      */
     @Override
     public Integer call(String... args) {
-        if (ArrayUtils.isEmpty(args)) {
-            throw new IllegalArgumentException("Incorrect parameter count in the call to native function 'LENGTH'");
+        if (args == null || args.length != 1) {
+            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'LENGTH'");
         }
-        return args[0].length();
+        return args[0] == null ? null : args[0].length();
+    }
+
+    @Deprecated
+    public static void main(String[] args) {
+        System.out.println(Length.newInstance().call(new String[]{null}));
     }
 
     /**

@@ -27,10 +27,10 @@ public final class Upper extends AbstractString2String {
      */
     @Override
     public String call(String... args) {
-        if (args == null || args.length == 0 || args[0] == null) {
-            return null;
+        if (args == null || args.length != 1) {
+            throw new IllegalArgumentException("Incorrect parameter count in the call to native function 'UPPER'");
         }
-        return args[0].toUpperCase(Locale.getDefault());
+        return args[0] == null ? null : args[0].toUpperCase(Locale.getDefault());
     }
 
     /**

@@ -4,6 +4,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.data.constants.FunctionType;
 import org.apache.data.functions.AbstractBuiltinFunction;
+import org.apache.data.functions.AbstractString2String;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -17,7 +18,7 @@ import static org.apache.data.constants.Constants.HMS_PATTERN;
  * @date 2025/1/4
  * @since 1.0.0-SNAPSHOT
  */
-public final class CurTime extends AbstractBuiltinFunction<String> {
+public final class CurTime extends AbstractString2String {
 
     private static final CurTime INSTANCE = new CurTime();
 

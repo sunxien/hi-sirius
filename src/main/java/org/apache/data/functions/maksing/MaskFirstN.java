@@ -30,8 +30,8 @@ public final class MaskFirstN extends AbstractString2String {
      */
     @Override
     public String call(String... args) {
-        if (args == null || args.length < 5) {
-            throw new IllegalArgumentException("Invalid arguments");
+        if (args == null || args.length != 5) {
+            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'MASK_FIRST_N'");
         }
         final String value = args[0];
         final int firstN = Integer.parseInt(args[4]);

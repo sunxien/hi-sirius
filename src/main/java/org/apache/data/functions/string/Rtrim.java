@@ -1,9 +1,9 @@
 package org.apache.data.functions.string;
 
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.data.constants.FunctionType;
 import org.apache.data.functions.AbstractString2String;
-
-import java.util.Arrays;
 
 /**
  * @author sunxien
@@ -36,24 +36,29 @@ public final class Rtrim extends AbstractString2String {
      */
     @Override
     public String call(String... args) {
-        if (args == null || args.length < 2) {
-            throw new IllegalArgumentException("Invalid arguments");
+        if (args == null || args.length != 1) {
+            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'RTRIM'");
         }
-        if (args[0] == null) {
+        final String value = args[0];
+        if (value == null) {
             return null;
         }
-        String trimString = args[1];
-        if (trimString == null) {
-            trimString = " ";
+        if (value.isEmpty()) {
+            return StringUtils.EMPTY;
         }
-        char[] trimSet = trimString.toCharArray();
-        int endIndex = args[0].length();
+        char[] chars = value.toCharArray();
+        int endIndex = value.length() - 1;
         for (; endIndex > 0; endIndex--) {
-            char key = args[0].charAt(endIndex - 1);
-            if (Arrays.binarySearch(trimSet, key) < 0)
+            if (!Character.isWhitespace(chars[endIndex])) {
                 break;
+            }
         }
         return args[0].substring(0, endIndex);
+    }
+
+    @Deprecated
+    public static void main(String[] args) {
+        System.out.println(Rtrim.newInstance().call(new String[]{null}));
     }
 
     /**

@@ -31,8 +31,8 @@ public final class Mask extends AbstractString2String {
      */
     @Override
     public String call(String... args) {
-        if (args == null || args.length < 4) {
-            throw new IllegalArgumentException("Invalid arguments");
+        if (args == null || args.length != 4) {
+            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'MASK'");
         }
         final String value = args[0];
         if (value == null || value.isEmpty()) {
