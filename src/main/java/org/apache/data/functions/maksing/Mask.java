@@ -1,14 +1,14 @@
 package org.apache.data.functions.maksing;
 
 import org.apache.data.constants.FunctionType;
-import org.apache.data.functions.AbstractBuiltinFunction;
+import org.apache.data.functions.AbstractString2String;
 
 /**
  * @author sunxien
  * @date 2025/1/3
  * @since 1.0.0-SNAPSHOT
  */
-public final class Mask extends AbstractBuiltinFunction<String> {
+public final class Mask extends AbstractString2String {
 
     private static final Mask INSTANCE = new Mask();
 
@@ -30,7 +30,7 @@ public final class Mask extends AbstractBuiltinFunction<String> {
      * @return String
      */
     @Override
-    public String call(String[] args) {
+    public String call(String... args) {
         if (args == null || args.length < 4) {
             throw new IllegalArgumentException("Invalid arguments");
         }

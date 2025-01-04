@@ -29,7 +29,7 @@ public final class MD5 extends AbstractSecurityFunction {
      * @return String
      */
     @Override
-    public String call(String[] args) {
+    public String call(String... args) {
         if (args == null || args.length == 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }

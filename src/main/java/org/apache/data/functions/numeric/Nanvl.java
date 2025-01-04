@@ -2,6 +2,7 @@ package org.apache.data.functions.numeric;
 
 import org.apache.data.constants.FunctionType;
 import org.apache.data.functions.AbstractBuiltinFunction;
+import org.apache.data.functions.AbstractNumber2Number;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -11,7 +12,7 @@ import java.math.RoundingMode;
  * @date 2025/1/3
  * @since 1.0.0-SNAPSHOT
  */
-public final class Nanvl extends AbstractBuiltinFunction<Number> {
+public final class Nanvl extends AbstractNumber2Number {
 
     private static final Nanvl INSTANCE = new Nanvl();
 
@@ -30,7 +31,7 @@ public final class Nanvl extends AbstractBuiltinFunction<Number> {
      * @return Number
      */
     @Override
-    public Number call(Number[] args) {
+    public Number call(Number... args) {
         if (args == null || args.length == 0) {
             return null;
         }

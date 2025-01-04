@@ -1,7 +1,7 @@
 package org.apache.data.functions.string;
 
 import org.apache.data.constants.FunctionType;
-import org.apache.data.functions.AbstractBuiltinFunction;
+import org.apache.data.functions.AbstractString2String;
 
 import java.util.Locale;
 
@@ -10,23 +10,15 @@ import java.util.Locale;
  * @date 2025/1/3
  * @since 1.0.0-SNAPSHOT
  */
-public final class Upper extends AbstractBuiltinFunction<String> {
+public final class Upper extends AbstractString2String {
 
-    /**
-     *
-     */
-    private static final Upper SINGLETON = new Upper();
+    private static final Upper INSTANCE = new Upper();
 
-    /**
-     *
-     */
-    private Upper(){}
+    private Upper() {
+    }
 
-    /**
-     * @return Upper
-     */
     public static Upper newInstance() {
-        return SINGLETON;
+        return INSTANCE;
     }
 
     /**
@@ -34,7 +26,7 @@ public final class Upper extends AbstractBuiltinFunction<String> {
      * @return String
      */
     @Override
-    public String call(String[] args) {
+    public String call(String... args) {
         if (args == null || args.length == 0 || args[0] == null) {
             return null;
         }

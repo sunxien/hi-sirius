@@ -1,31 +1,22 @@
 package org.apache.data.functions.string;
 
 import org.apache.data.constants.FunctionType;
-import org.apache.data.functions.AbstractBuiltinFunction;
+import org.apache.data.functions.AbstractString2String;
 
 /**
  * @author sunxien
  * @date 2025/1/3
  * @since 1.0.0-SNAPSHOT
  */
-public final class Substr extends AbstractBuiltinFunction<String> {
+public final class Substr extends AbstractString2String {
 
-    /**
-     *
-     */
-    private static final Substr SINGLETON = new Substr();
+    private static final Substr INSTANCE = new Substr();
 
-    /**
-     *
-     */
     private Substr() {
     }
 
-    /**
-     * @return Substr
-     */
     public static Substr newInstance() {
-        return SINGLETON;
+        return INSTANCE;
     }
 
     /**
@@ -33,7 +24,7 @@ public final class Substr extends AbstractBuiltinFunction<String> {
      * @return String
      */
     @Override
-    public String call(String[] args) {
+    public String call(String... args) {
         if (args == null || args.length == 0 || args.length < 3) {
             return null;
         }

@@ -2,7 +2,7 @@ package org.apache.data.functions.numeric;
 
 import org.apache.data.constants.FunctionType;
 import org.apache.data.functions.AbstractBuiltinFunction;
-import org.apache.data.functions.string.Ascii;
+import org.apache.data.functions.AbstractNumber2Number;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -12,7 +12,7 @@ import java.math.RoundingMode;
  * @date 2025/1/3
  * @since 1.0.0-SNAPSHOT
  */
-public final class Trunc extends AbstractBuiltinFunction<Number> {
+public final class Trunc extends AbstractNumber2Number {
 
 
     private static final Trunc INSTANCE = new Trunc();
@@ -35,7 +35,7 @@ public final class Trunc extends AbstractBuiltinFunction<Number> {
      * @return
      */
     @Override
-    public Number call(Number[] args) {
+    public Number call(Number... args) {
         if (args == null || args.length == 0 || args[0] == null) {
             return null;
         }

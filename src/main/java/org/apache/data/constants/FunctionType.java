@@ -64,7 +64,7 @@ public enum FunctionType {
     MINUTE,
     MONTH,
     SYSDATE,
-    SYS_TIMESTAMP,
+    UNIX_TIMESTAMP,
     TIMESTAMP_ADD,
     TIMESTAMP_FORMAT,
     TIMESTAMP_TRUNC,

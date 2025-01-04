@@ -5,5 +5,5 @@ package org.apache.data.functions.datetime;
  * @date 2025/1/4
  * @since 1.0.0-SNAPSHOT
  */
-public final class CurrDate {
+public class UnixTimestamp {
 }

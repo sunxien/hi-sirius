@@ -1,12 +1,15 @@
 package org.apache.data.functions.crypto;
 
-import org.apache.data.functions.AbstractBuiltinFunction;
+import org.apache.data.functions.AbstractString2String;
 import org.bouncycastle.crypto.digests.SM3Digest;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.security.Provider;
 import java.security.Security;
@@ -17,7 +20,7 @@ import java.util.Base64;
  * @date 2025/1/4
  * @since 1.0.0-SNAPSHOT
  */
-public abstract class AbstractSecurityFunction extends AbstractBuiltinFunction<String> {
+public abstract class AbstractSecurityFunction extends AbstractString2String {
 
     static {
         Security.addProvider((Provider) new BouncyCastleProvider());
