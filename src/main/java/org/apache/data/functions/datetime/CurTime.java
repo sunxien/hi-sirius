@@ -3,7 +3,6 @@ package org.apache.data.functions.datetime;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.data.constants.FunctionType;
-import org.apache.data.functions.AbstractBuiltinFunction;
 import org.apache.data.functions.AbstractString2String;
 
 import java.time.LocalDateTime;
@@ -40,6 +39,9 @@ public final class CurTime extends AbstractString2String {
     public String call(String... args) {
         String pattern = HMS_PATTERN;
         if (ArrayUtils.isNotEmpty(args)) {
+            if (args.length != 1) {
+                throw new IllegalArgumentException("Incorrect parameter count in the call to function 'CURTIME'");
+            }
             int fsp = Integer.parseInt(args[0]);
             if (fsp < 0) {
                 throw new IllegalArgumentException("Invalid precision for curtime(fsp). Valid: [0,6]");

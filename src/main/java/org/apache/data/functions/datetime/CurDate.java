@@ -1,10 +1,11 @@
 package org.apache.data.functions.datetime;
 
-import static org.apache.data.constants.Constants.YMD_FORMATER;
 import org.apache.data.constants.FunctionType;
 import org.apache.data.functions.AbstractBuiltinFunction;
 
 import java.time.LocalDate;
+
+import static org.apache.data.constants.Constants.YMD_FORMATER;
 
 /**
  * Ref: https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_curdate
@@ -20,9 +21,6 @@ public final class CurDate extends AbstractBuiltinFunction<String, String> {
     private CurDate() {
     }
 
-    /**
-     * @return CurDate
-     */
     public static CurDate newInstance() {
         return INSTANCE;
     }
@@ -33,6 +31,9 @@ public final class CurDate extends AbstractBuiltinFunction<String, String> {
      */
     @Override
     public String call(String... args) {
+        if (args != null) {
+            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'CURDATE'");
+        }
         return YMD_FORMATER.format(LocalDate.now());
     }
 

@@ -13,6 +13,8 @@ import java.time.temporal.WeekFields;
 import static org.apache.data.constants.Constants.YMDHMS_FORMATER;
 
 /**
+ * Ref: https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_week
+ *
  * @author sunxien
  * @date 2025/1/4
  * @since 1.0.0-SNAPSHOT
@@ -29,6 +31,8 @@ public final class Week extends AbstractString2Integer {
     }
 
     /**
+     * Return the week number
+     *
      * @param args
      * @return String
      */
