@@ -38,8 +38,7 @@ public final class Mask extends AbstractString2String {
         if (value == null || value.isEmpty()) {
             return value;
         }
-        final int len = value.length();
-        final StringBuilder sb = new StringBuilder(len);
+        final StringBuilder sb = new StringBuilder(value.length());
         for (char c : value.toCharArray()) {
             if (Character.isUpperCase(c)) {
                 sb.append(args[1]); // upper mask
