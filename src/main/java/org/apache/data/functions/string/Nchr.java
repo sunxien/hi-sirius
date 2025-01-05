@@ -35,24 +35,24 @@ public class Nchr extends AbstractBuiltinFunction<String, Character> {
     @Override
     public Character call(String... args) {
         if (args == null || args.length != 1) {
-            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'NCHR'");
+            throw new IllegalArgumentException("Incorrect parameter count to function 'NCHR'");
         }
         final String arg = args[0];
         if (arg == null) {
             return null;
         } else if (arg.trim().isEmpty()) {
-            throw new IllegalArgumentException("Incorrect arguments to function NCHR");
+            throw new IllegalArgumentException("Incorrect parameters to function NCHR");
         }
         try {
             int unicode = new BigDecimal(arg).intValue();
             if (unicode < 0) {
-                throw new IllegalArgumentException("Incorrect arguments to function NCHR");
+                throw new IllegalArgumentException("Incorrect parameters to function NCHR");
             } else if (unicode > 256) {
                 unicode = unicode % 256;
             }
             return (char) unicode;
         } catch (NumberFormatException e) {
-            throw new RuntimeException("Incorrect arguments to function NCHR. Error: " + e.getMessage());
+            throw new RuntimeException("Incorrect parameters to function NCHR. Error: " + e.getMessage());
         }
     }
 

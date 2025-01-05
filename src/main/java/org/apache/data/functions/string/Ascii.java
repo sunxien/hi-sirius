@@ -39,7 +39,7 @@ public final class Ascii extends AbstractString2Integer {
     @Override
     public Integer call(String... args) {
         if (args == null || args.length != 1) {
-            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'ASCII'");
+            throw new IllegalArgumentException("Incorrect parameter count to function 'ASCII'");
         }
         if (args[0] == null) {
             return null;

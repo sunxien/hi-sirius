@@ -29,7 +29,7 @@ public final class Lower extends AbstractString2String {
     @Override
     public String call(String... args) {
         if (ArrayUtils.isEmpty(args)) {
-            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'LOWER'");
+            throw new IllegalArgumentException("Incorrect parameter count to function 'LOWER'");
         }
         return args[0] == null ? null : args[0].toLowerCase(Locale.getDefault());
     }

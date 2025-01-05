@@ -40,7 +40,7 @@ public final class CurTime extends AbstractString2String {
         String pattern = HMS_PATTERN;
         if (ArrayUtils.isNotEmpty(args)) {
             if (args.length != 1) {
-                throw new IllegalArgumentException("Incorrect parameter count in the call to function 'CURTIME'");
+                throw new IllegalArgumentException("Incorrect parameter count to function 'CURTIME'");
             }
             int fsp = Integer.parseInt(args[0]);
             if (fsp < 0) {

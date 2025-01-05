@@ -15,9 +15,6 @@ public final class MaskLastN extends AbstractString2String {
     private MaskLastN() {
     }
 
-    /**
-     * @return MaskLastN
-     */
     public static MaskLastN newInstance() {
         return INSTANCE;
     }
@@ -31,7 +28,7 @@ public final class MaskLastN extends AbstractString2String {
     @Override
     public String call(String... args) {
         if (args == null || args.length != 5) {
-            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'MASK_LAST_N'");
+            throw new IllegalArgumentException("Incorrect parameter count to function 'MASK_LAST_N'");
         }
         final String value = args[0];
         final int lastN = Integer.parseInt(args[4]);

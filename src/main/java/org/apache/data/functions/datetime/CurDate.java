@@ -32,7 +32,7 @@ public final class CurDate extends AbstractBuiltinFunction<String, String> {
     @Override
     public String call(String... args) {
         if (args != null) {
-            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'CURDATE'");
+            throw new IllegalArgumentException("Incorrect parameter count to function 'CURDATE'");
         }
         return YMD_FORMATER.format(LocalDate.now());
     }

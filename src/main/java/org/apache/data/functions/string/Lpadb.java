@@ -34,7 +34,7 @@ public final class Lpadb extends AbstractString2String {
     @Override
     public String call(String... args) {
         if (args == null || args.length != 3) {
-            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'LPAD'");
+            throw new IllegalArgumentException("Incorrect parameter count to function 'LPAD'");
         }
         if (args[0] == null || args[1] == null || args[2] == null) {
             return null;

@@ -29,7 +29,7 @@ public class Reverse extends AbstractString2String {
     @Override
     public String call(String... args) {
         if (args == null || args.length != 1) {
-            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'REVERSE'");
+            throw new IllegalArgumentException("Incorrect parameter count to function 'REVERSE'");
         }
         return args[0] == null ? null : new StringBuilder(args[0]).reverse().toString();
     }

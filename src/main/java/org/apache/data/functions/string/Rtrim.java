@@ -28,7 +28,7 @@ public final class Rtrim extends AbstractString2String {
     @Override
     public String call(String... args) {
         if (args == null || args.length != 1) {
-            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'RTRIM'");
+            throw new IllegalArgumentException("Incorrect parameter count to function 'RTRIM'");
         }
         final String value = args[0];
         if (value == null) {

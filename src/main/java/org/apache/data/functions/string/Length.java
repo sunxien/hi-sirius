@@ -26,7 +26,7 @@ public final class Length extends AbstractString2Integer {
     @Override
     public Integer call(String... args) {
         if (args == null || args.length != 1) {
-            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'LENGTH'");
+            throw new IllegalArgumentException("Incorrect parameter count to function 'LENGTH'");
         }
         return args[0] == null ? null : args[0].length();
     }

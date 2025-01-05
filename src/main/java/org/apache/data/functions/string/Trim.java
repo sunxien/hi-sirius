@@ -26,7 +26,7 @@ public final class Trim extends AbstractString2String {
     @Override
     public String call(String... args) {
         if (args == null || args.length != 1) {
-            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'TRIM'");
+            throw new IllegalArgumentException("Incorrect parameter count to function 'TRIM'");
         }
         return args[0] == null ? null : args[0].trim();
     }

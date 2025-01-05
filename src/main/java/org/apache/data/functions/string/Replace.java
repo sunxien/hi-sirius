@@ -30,7 +30,7 @@ public final class Replace extends AbstractString2String {
     @Override
     public String call(String... args) {
         if (args == null || args.length != 3) {
-            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'REPLACE'");
+            throw new IllegalArgumentException("Incorrect parameter count to function 'REPLACE'");
         }
         String value = args[0];
         String searchString = args[1];

@@ -28,7 +28,7 @@ public final class Substr extends AbstractString2String {
     @Override
     public String call(String... args) {
         if (args == null || args.length < 2 || args.length > 3) {
-            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'SUBSTR'");
+            throw new IllegalArgumentException("Incorrect parameter count to function 'SUBSTR'");
         }
         if (args[0] == null || args[1] == null || (args.length > 2 && args[2] == null)) {
             return null;

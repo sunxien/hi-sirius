@@ -36,7 +36,7 @@ public final class Concat extends AbstractString2String {
     @Override
     public String call(String... args) {
         if (ArrayUtils.isEmpty(args)) {
-            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'CONCAT'");
+            throw new IllegalArgumentException("Incorrect parameter count to function 'CONCAT'");
         }
         StringBuilder sb = new StringBuilder();
         for (String arg : args) {

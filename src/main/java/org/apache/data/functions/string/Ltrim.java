@@ -29,7 +29,7 @@ public final class Ltrim extends AbstractString2String {
     @Override
     public String call(String... args) {
         if (args == null || args.length != 1) {
-            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'LTRIM'");
+            throw new IllegalArgumentException("Incorrect parameter count to function 'LTRIM'");
         }
         String value = args[0];
         if (value == null) {

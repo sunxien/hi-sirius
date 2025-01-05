@@ -75,9 +75,10 @@ public enum FunctionType {
     /**
      * MASKING
      */
-    MASK_FIRST_N,
     MASK,
+    MASK_FIRST_N,
     MASK_LAST_N,
+    MASK_RANGE_N,
     MASK_SHOW_FIRST_N,
     MASK_SHOW_LAST_N;
 

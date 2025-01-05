@@ -30,7 +30,7 @@ public final class Nvl extends AbstractString2String {
     public String call(String... args) {
 
         if (args == null || args.length != 2) {
-            throw new IllegalArgumentException("Incorrect parameter count in the call to function 'NVL'");
+            throw new IllegalArgumentException("Incorrect parameter count to function 'NVL'");
         }
 
         final String value = args[0];
