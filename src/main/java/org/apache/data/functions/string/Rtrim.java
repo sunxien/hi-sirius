@@ -12,22 +12,13 @@ import org.apache.data.functions.AbstractString2String;
  */
 public final class Rtrim extends AbstractString2String {
 
-    /**
-     *
-     */
-    private static final Rtrim SINGLETON = new Rtrim();
+    private static final Rtrim INSTANCE = new Rtrim();
 
-    /**
-     *
-     */
     private Rtrim() {
     }
 
-    /**
-     * @return Rtrim
-     */
     public static Rtrim newInstance() {
-        return SINGLETON;
+        return INSTANCE;
     }
 
     /**

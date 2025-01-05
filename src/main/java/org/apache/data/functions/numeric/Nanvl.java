@@ -8,6 +8,8 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
+ * Ref: https://docs.oracle.com/en/database/oracle/oracle-database/21/sqlrf/NANVL.html
+ *
  * @author sunxien
  * @date 2025/1/3
  * @since 1.0.0-SNAPSHOT
