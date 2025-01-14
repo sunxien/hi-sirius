@@ -9,7 +9,7 @@ import org.apache.sirius.database.rule.mysql.AbstractMySQLRule;
  * @date 2025/1/15
  * @since 1.0.0-SNAPSHOT
  */
-public class DatabaseNameIsExceedLimit extends AbstractMySQLRule {
+public class TempTableNameLengthIsExceedLimit extends AbstractMySQLRule {
 
     @Override
     public boolean eval() {
@@ -18,7 +18,7 @@ public class DatabaseNameIsExceedLimit extends AbstractMySQLRule {
 
     @Override
     public RuleLevel getRuleLevel() {
-        return RuleLevel.MAJOR;
+        return null;
     }
 
     @Override

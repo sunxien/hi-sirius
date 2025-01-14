@@ -18,7 +18,7 @@ public class UpdateWithoutWhereIsNotAllowed extends AbstractMySQLRule {
 
     @Override
     public RuleLevel getRuleLevel() {
-        return RuleLevel.MAJOR;
+        return RuleLevel.CRITIC;
     }
 
     @Override

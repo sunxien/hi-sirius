@@ -9,7 +9,7 @@ import org.apache.sirius.database.rule.mysql.AbstractMySQLRule;
  * @date 2025/1/15
  * @since 1.0.0-SNAPSHOT
  */
-public class PartitionIsNotAllowed extends AbstractMySQLRule {
+public class ColumnNameLengthIsExceedLimit extends AbstractMySQLRule {
 
     @Override
     public boolean eval() {
@@ -18,7 +18,7 @@ public class PartitionIsNotAllowed extends AbstractMySQLRule {
 
     @Override
     public RuleLevel getRuleLevel() {
-        return null;
+        return RuleLevel.CRITIC;
     }
 
     @Override

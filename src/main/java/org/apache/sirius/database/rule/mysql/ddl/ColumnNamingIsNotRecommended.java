@@ -18,7 +18,7 @@ public class ColumnNamingIsNotRecommended extends AbstractMySQLRule {
 
     @Override
     public RuleLevel getRuleLevel() {
-        return null;
+        return RuleLevel.MAJOR;
     }
 
     @Override

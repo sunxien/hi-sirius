@@ -18,7 +18,7 @@ public class IndexColumnLengthIsExceedLimit extends AbstractMySQLRule {
 
     @Override
     public RuleLevel getRuleLevel() {
-        return null;
+        return RuleLevel.CRITIC;
     }
 
     @Override
